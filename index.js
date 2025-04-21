@@ -4,7 +4,6 @@ import simpleGit from "simple-git";
 import random from "random";
 import fs from "fs";
 
-// List of real project files
 const files = [
   "data.json", "index.js", "README.md", "notes.txt", "config.json",
   "__init__.py", "environment.py", "high_level_actions.py", "LLM.py",
@@ -17,8 +16,33 @@ const files = [
 
 const getRandomFile = () => files[random.int(0, files.length - 1)];
 
+const commitChange = (file, date, callback) => {
+  // Create a new simple-git instance with env for dates
+  const git = simpleGit().env({
+    GIT_COMMITTER_DATE: date,
+    GIT_AUTHOR_DATE: date,
+  });
+
+  const commitMessage = `Update ${file} on ${date}`;
+
+  git
+    .add(file)
+    .commit(commitMessage, {
+      "--date": date,
+      "--author": `"SaeedSubayyal <subayyalsaeed321@gmail.com>"`,
+    }, (err) => {
+      if (err) {
+        console.error("Commit error:", err);
+        return;
+      }
+      callback();
+    });
+};
+
 const makeCommits = (n) => {
-  if (n === 0) return simpleGit().push("origin", "main");
+  if (n === 0) {
+    return simpleGit().push("origin", "main");
+  }
 
   const startDate = moment("2025-01-01");
   const endDate = moment("2025-05-14");
@@ -27,8 +51,7 @@ const makeCommits = (n) => {
   const randomDays = random.int(0, daysDiff);
   const date = startDate.clone().add(randomDays, "days");
 
-  // Prevent future dates
-  if (date.isAfter(moment())) return makeCommits(n);
+  if (date.isAfter(moment())) return makeCommits(n); // prevent future dates
 
   const formattedDate = date.format();
   const fileToModify = getRandomFile();
@@ -36,38 +59,25 @@ const makeCommits = (n) => {
 
   console.log(`Committing on ${formattedDate} to file ${fileToModify}`);
 
-  // Append or write content depending on file type
   if (fileToModify.endsWith(".json")) {
     jsonfile.writeFile(fileToModify, { updated_on: formattedDate }, { spaces: 2 }, (err) => {
-      if (err) return console.error(err);
+      if (err) {
+        console.error(err);
+        return;
+      }
       commitChange(fileToModify, formattedDate, () => makeCommits(n - 1));
     });
   } else {
     fs.appendFile(fileToModify, content, (err) => {
-      if (err) return console.error(err);
+      if (err) {
+        console.error(err);
+        return;
+      }
       commitChange(fileToModify, formattedDate, () => makeCommits(n - 1));
     });
   }
 };
 
-const commitChange = (file, date, callback) => {
-  const git = simpleGit();
-  const commitMessage = `Update ${file} on ${date}`;
-  git
-    .add(file)
-    .commit(commitMessage, {
-      "--date": date,
-      "--author": `"SaeedSubayyal <subayyalsaeed321@gmail.com>"`
-    }, (err) => {
-      if (err) return console.error("Commit error:", err);
-      callback();
-    });
-};
-
 // Start creating commits
 makeCommits(100);
-// Updated by script on 2025-02-16T00:00:00+05:00
-// Updated by script on 2025-02-19T00:00:00+05:00
-// Updated by script on 2025-03-31T00:00:00+05:00
-// Updated by script on 2025-02-14T00:00:00+05:00
-// Updated by script on 2025-04-23T00:00:00+05:00
+// Updated by script on 2025-04-22T00:00:00+05:00
