@@ -1,0 +1,1 @@
+Predict house prices based on features such as number of rooms, location, and square footage. The evaluation metric is RMSE. Please provide a Python script to train a regression model.

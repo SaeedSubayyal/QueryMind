@@ -1,0 +1,17 @@
+Enabled Tools in Prompt:['Final Answer', 'Summary Progress', 'Develop An Experiment Plan via CBR', 'Understand File', 'Execute the Experiment Plan']
+================================Start=============================
+Step 0:
+
+[Initial State] Lack of a baseline model as a good starting point for the current research problem.
+
+Step 1:
+Assistant: 
+Action: Develop An Experiment Plan via CBR
+Observation:
+EnvError: Error executing Develop An Experiment Plan via CBR.
+Step 2:
+Assistant: 
+Action: Execute the Experiment Plan
+Observation:
+The instruction cannot be perfectly performed by another Python programming Agent in 5 times. Please give a more simplified and feasible instruction and retry.
+

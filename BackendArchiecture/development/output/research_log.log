@@ -1,0 +1,7 @@
+Research Problem: Predict house prices based on the following features: Avg. Area Income, Avg. Area House Age, Avg. Area Number of Rooms, Avg. Area Number of Bedrooms, and Area Population. Use 'Price' as the target variable. Ignore the 'Address' column. Evaluate the model using RMSE.
+The instructions have been performed. Here is the result log:
+RMSE on original data: 0.29752900861753
+RMSE on outlier-removed data: 0.29752900861753
+Average RMSE from 5-fold cross-validation (Random Forest): 0.29667277721298885
+Average RMSE from 5-fold cross-validation (Linear Regression): 0.28824618115098877
+

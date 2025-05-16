@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: MLAgentBench
+Version: 0.1
+Requires-Dist: google-generativeai
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: python-multipart
+Dynamic: requires-dist

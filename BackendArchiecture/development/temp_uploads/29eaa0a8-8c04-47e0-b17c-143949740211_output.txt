@@ -1,0 +1,6 @@
+Failed to import AutoGPTAgent; Make sure you have installed the autogpt dependencies if you want to use it.
+usage: runner.py [-h] --problem PROBLEM [--input INPUT] [--output OUTPUT]
+                 [--log LOG] [--log_dir LOG_DIR] [--work_dir WORK_DIR]
+                 [--device DEVICE] [--python PYTHON] [--interactive]
+                 [--resume RESUME] [--resume_step RESUME_STEP]
+runner.py: error: unrecognized arguments: --agent-type DSAgent --log-dir logs/20250515-072132 --work-dir workspace/20250515-072132 --max-steps 30 --max-time 18000 --agent-max-steps 50

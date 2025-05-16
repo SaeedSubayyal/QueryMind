@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\development\MLAgentBench\runner.py", line 34, in run
+    final_message = agent.run(env)
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\development\MLAgentBench\agents\dsagent.py", line 58, in run
+    log_content = self.revise_running_log(running_log, plans, execution_log, diff, log_file=os.path.join(self.log_dir, "tmp.txt"))
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\development\MLAgentBench\agents\dsagent.py", line 95, in revise_running_log
+    log = "[Experiment Summary]:" + complete_text_fast(prompt, log_file=log_file).split("[Experiment Summary]:")[1]
+                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range

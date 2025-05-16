@@ -1,0 +1,66 @@
+Traceback (most recent call last):
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\development\MLAgentBench\runner.py", line 34, in run
+    final_message = agent.run(env)
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\development\MLAgentBench\agents\dsagent.py", line 35, in run
+    plans = env.execute(Action(action, action_input))
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\development\MLAgentBench\environment.py", line 293, in execute
+    observation = self.action_infos[action_name].function(**action_input, log_file=log_file, trace=trace, **self.static_kwargs_for_tools)
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\development\MLAgentBench\high_level_actions.py", line 30, in plan_experiment_design_cbr
+    retrieval_database = RetrievalDatabase([
+           "../data/nlp_cases",
+    ...<3 lines>...
+        model="BAAI/llm-embedder",
+    )
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\development\MLAgentBench\retrieval.py", line 54, in __init__
+    x_outputs = self.model(input_ids=input_ids, attention_mask=attention_mask)
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\.venv\Lib\site-packages\transformers\models\bert\modeling_bert.py", line 1144, in forward
+    encoder_outputs = self.encoder(
+        embedding_output,
+    ...<8 lines>...
+        return_dict=return_dict,
+    )
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\.venv\Lib\site-packages\transformers\models\bert\modeling_bert.py", line 695, in forward
+    layer_outputs = layer_module(
+        hidden_states,
+    ...<5 lines>...
+        output_attentions,
+    )
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\.venv\Lib\site-packages\transformers\models\bert\modeling_bert.py", line 627, in forward
+    layer_output = apply_chunking_to_forward(
+        self.feed_forward_chunk, self.chunk_size_feed_forward, self.seq_len_dim, attention_output
+    )
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\.venv\Lib\site-packages\transformers\pytorch_utils.py", line 253, in apply_chunking_to_forward
+    return forward_fn(*input_tensors)
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\.venv\Lib\site-packages\transformers\models\bert\modeling_bert.py", line 639, in feed_forward_chunk
+    intermediate_output = self.intermediate(attention_output)
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\.venv\Lib\site-packages\transformers\models\bert\modeling_bert.py", line 539, in forward
+    hidden_states = self.dense(hidden_states)
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\Subayyal Saeed\Desktop\DS-Agent-main\.venv\Lib\site-packages\torch\nn\modules\linear.py", line 125, in forward
+    return F.linear(input, self.weight, self.bias)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
